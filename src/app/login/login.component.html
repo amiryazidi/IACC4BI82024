@@ -1,0 +1,41 @@
+<p>login works!</p>
+
+
+
+<label>login</label>
+<input class="form-control" type="text" [formControl]="login">
+
+<label>password</label>
+<input class="form-control" type="text"  [formControl]="pwd">
+
+<input class="btn btn-info" type="submit" value="save" [disabled]="login.invalid || pwd.invalid"  (click)="save()">
+
+
+<h1> FormGroup</h1>
+
+<form  [formGroup]="loginForm">
+<label>name</label>
+<input class="form-control" type="text" formControlName="name">
+
+<div *ngIf="loginForm.controls['name'].invalid && loginForm.controls['name'].touched" class="alert alert-danger">
+  name obligatoire
+</div>
+
+<label>cin</label>
+<input class="form-control" type="text"  formControlName="cin">
+
+
+<div *ngIf="loginForm.controls['cin'].invalid && loginForm.controls['cin'].touched" class="alert alert-danger">
+  <p *ngIf="loginForm.controls['cin'].hasError('pattern')">8 chiffres</p>
+  <p *ngIf="loginForm.controls['cin'].hasError('required')">cin  obligatoire </p>
+</div>
+
+
+<label>email</label>
+<input class="form-control" type="text"  formControlName="email">
+
+<label>password</label>
+<input class="form-control" type="text"  formControlName="password">
+
+<input class="btn btn-info" type="submit" value="save" [disabled]="loginForm.invalid"  (click)="save()">
+</form>

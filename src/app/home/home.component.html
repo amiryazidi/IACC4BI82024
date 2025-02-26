@@ -1,0 +1,44 @@
+<!--
+{{title}}
+
+
+<table class="table" border="1">
+    <tr>
+        <td>id</td>
+        <td>title</td>
+        <td>price</td>
+        <td>quantity</td>
+        <td>image</td>
+    </tr>
+    <tr *ngFor="let p of products">
+        <td>{{p.id}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td><img src="{{p.img}}"> </td>
+    </tr>
+</table>
+-->
+<label>serach by price </label>
+<input class="form-control" type="text" placeholder="price" [(ngModel)]="priceMax">
+<div class="row">
+    <div *ngFor="let p of products" class="col-md-4 col-sm-6 col-12 d-flex justify-content-center">
+        <div *ngIf="p.price > priceMax || priceMax ==null">
+            <div class="card shadow-sm mb-4" style="width: 18rem;">
+                <img class="card-img-top" [src]="p.img" alt="Product image">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ p.title }}</h5>
+                    <p class="card-text"><strong>Price:</strong> {{ p.price }} €</p>
+                    <p class="card-text"><strong>Quantity:</strong> {{ p.quantity }}</p>
+                    <button [disabled]="p.quantity==0" (click)="buy(p)" class="btn btn-primary btn-block">buy</button>
+                    <button class="btn btn-dark btn-block" [routerLink]="['/detailProd',p.id]">detail</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="text" [(ngModel)]="color">
+<p [style.backgroundColor]="color">property Binding </p>
+<button btn btn-info (click)="show()"> save</button>

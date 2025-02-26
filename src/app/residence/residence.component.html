@@ -1,0 +1,22 @@
+
+<button class="btn btn-primary mb-3" routerLink="/addResidence">Add Residence</button>
+<p class="h4 text-primary mb-3">Residences List</p>
+
+<ul class="list-group">
+    <li *ngFor="let r of listResidences" class="list-group-item d-flex align-items-center">
+        <!-- Image de la résidence -->
+        <img [src]="r.image" alt="residence" class="img-thumbnail me-3" style="width: 80px; height: 80px; object-fit: cover;">
+
+        <!-- Contenu de la résidence -->
+        <div>
+            <h5 class="mb-1">{{ r.name }}</h5>
+            <span class="badge" [ngClass]="{'bg-success': r.status === 'Available', 'bg-danger': r.status === 'Unavailable'}">
+                {{ r.status }}
+            </span>
+            <p class="text-muted mb-0">{{ r.address }}</p>
+            <button class="btn btn-primary mb-3" [routerLink]="['/detail',r.id]">detail</button>
+            <button class="btn btn-primary mb-3" (click)="supp(r.id)">sup</button>
+
+        </div>
+    </li>
+</ul>
