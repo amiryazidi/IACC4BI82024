@@ -9,13 +9,14 @@
 
         <!-- Contenu de la résidence -->
         <div>
-            <h5 class="mb-1">{{ r.name }}</h5>
+            <h5 class="mb-1">Name : {{ r.name }}</h5>
             <span class="badge" [ngClass]="{'bg-success': r.status === 'Available', 'bg-danger': r.status === 'Unavailable'}">
-                {{ r.status }}
+               Status :  {{ r.status }}
             </span>
-            <p class="text-muted mb-0">{{ r.address }}</p>
+            <p class="text-muted mb-0"> Adresse : {{ r.address }}</p>
             <button class="btn btn-primary mb-3" [routerLink]="['/detail',r.id]">detail</button>
             <button class="btn btn-primary mb-3" (click)="supp(r.id)">sup</button>
+            <button class="btn btn-primary mb-3" [routerLink]="['/addResidence',r.id]">update</button>
 
         </div>
     </li>

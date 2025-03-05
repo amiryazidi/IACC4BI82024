@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:'residence', component: RESIDENCEComponent},
   {path:'login', component: LoginComponent},
   {path:'addResidence', component: FormResidenceComponent},
+  {path:'addResidence/:id', component: FormResidenceComponent},
   {path:'detail/:id', component: DetailResComponent},
   {path:'detailProd/:id', component: DetailProdComponent},
   {path : '**' , component : NotFoundComponent},   // not found

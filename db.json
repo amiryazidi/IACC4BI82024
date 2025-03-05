@@ -1,8 +1,15 @@
 {
   "residences": [
     {
-      "id": "1",
-      "name": "a title",
+      "name": "arctic",
+      "address": "ariana",
+      "image": "../../assets/images/R3.jpg",
+      "status": "disponible",
+      "id": "1"
+    },
+    {
+      "id": "182f",
+      "name": "test",
       "address": 100,
       "image": "../../assets/images/R3.jpg",
       "status": "disponible"

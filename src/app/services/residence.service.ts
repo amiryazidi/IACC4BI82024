@@ -26,4 +26,8 @@ export class ResidenceService {
    return this.http.delete('http://localhost:3000/residences/'+id)
   }
 
+  updateRes (res:Residence, id :number){
+    return this.http.put('http://localhost:3000/residences/'+id,res)
+  }
+
 }
